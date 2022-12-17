@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  box-shadow: 0 7px 10px -6px black;
+  padding: 0 4rem 0 3rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  height: 5rem;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.avtar {
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+.avtar img {
+  height: 100%;
+}

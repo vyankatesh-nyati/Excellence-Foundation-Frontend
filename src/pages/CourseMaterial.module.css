@@ -1,0 +1,7 @@
+.sessions {
+    display: flex;
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+}

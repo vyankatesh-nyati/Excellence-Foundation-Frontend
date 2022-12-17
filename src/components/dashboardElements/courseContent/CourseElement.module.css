@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400&display=swap");
+
+.container {
+  display: flex;
+  background: linear-gradient(90deg, #0f9ec8 0%, #22405b 100%);
+  border-radius: 25px;
+  /* position: relative; */
+  width: 70%;
+  margin-top: 2rem;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px #22405b;
+}
+
+.courseImg {
+  height: 12rem;
+  transform: translate(-50%, 0);
+}
+
+.courseImg img {
+  height: 100%;
+}
+
+.courseContent {
+  padding: 1rem 5rem 0 0;
+  margin-left: -1.5rem;
+}
+
+.courseHeading h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.lessons h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 30px;
+  /* identical to box height */
+  margin-top: 1rem;
+  color: #ffffff;
+}
+
+.courseRating img {
+  height: 1rem;
+}
