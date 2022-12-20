@@ -1,0 +1,29 @@
+.container {
+    width: 33.7rem;
+}
+
+.container img {
+    width: 100%;
+}
+
+
+@media (max-width: 1000px) {
+    .container {
+        width: 25rem;
+    }   
+}
+
+
+@media (max-width: 465px) {
+    .container {
+        width: 20rem;
+        padding: 0;
+        margin: 0;
+    }   
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 15rem;
+    }   
+}

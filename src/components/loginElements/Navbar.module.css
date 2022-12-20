@@ -1,0 +1,158 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.brandImg {
+  width: 15rem;
+  height: auto;
+  padding: 1rem;
+}
+
+.brandImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.navLinks {
+  height: 100%;
+  display: flex;
+}
+
+.navLinks ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-right: 1rem;
+}
+
+.navLinks ul li {
+  list-style: none;
+}
+
+.navLinks ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+}
+
+.navLinks ul:nth-child(2) li:nth-child(1) a {
+  color: #0e9ec9;
+}
+
+.register {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.register a {
+  padding: 0.4rem 1.2rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+  background: #22405b;
+  border-radius: 17px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.toggle {
+  position: absolute;
+  right: 2rem;
+  border: none;
+  font-size: 2rem;
+  background: none;
+  display: none;
+  top: 2rem;
+  z-index: 500;
+}
+
+.icon {
+  display: none;
+}
+
+@media (max-width: 1204px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    /* height: 100vh; */
+  }
+
+  .brandImg {
+    width: 15rem;
+  }
+
+  .navLinks {
+    /* display: none; */
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    background: #22405b;
+    clip-path: circle(0.0% at 100% 0);
+    transition: all .5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .navLinks ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navLinks ul li {
+    text-align: center;
+  }
+
+  .navLinks ul li a {
+    padding: 0.5rem 1rem;
+    color: white;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .steps {
+    flex-direction: column;
+  }
+
+  .register a {
+    margin-right: 0;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .navLinks.active {
+    clip-path: circle(141.3% at 100% 0);
+    height: 100vh;
+  }
+}
+
+@media (max-width: 688px) {
+  .brandImg {
+    width: 10rem;
+  }
+
+  .toggle {
+    font-size: 1.5rem;
+  }
+
+}

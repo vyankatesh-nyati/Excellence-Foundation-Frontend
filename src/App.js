@@ -1,13 +1,22 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import CourseMaterial from "./pages/CourseMaterial";
 import Dashboard from "./pages/Dashboard";
-import ReactPlayer from "react-player";
+import Login from "./pages/Login";
+
 
 const App = () => {
-  // return <Dashboard />;
   return (
     <>
-      <CourseMaterial />
+      <Route path="/dashboard">
+        <Dashboard />
+      </Route>
+      <Route path="/course-material">
+        <CourseMaterial />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
     </>
   );
 };
