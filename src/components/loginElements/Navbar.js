@@ -10,15 +10,18 @@ import { BiRightArrow } from "react-icons/bi";
 const Navbar = () => {
   const [toggleClass, setToggleClass] = useState(`${classes.navLinks}`);
   const [cross, setCross] = useState(false);
+  const [crossClass, setCrossClass] = useState(`${classes.toggle}`);
 
   const toggleHandler = () => {
     console.log("Clicked");
     if (toggleClass === `${classes.navLinks}`) {
       setToggleClass(`${classes.navLinks}  ${classes.active}`);
       setCross(true);
+      setCrossClass(`${classes.toggle} ${classes.active}`);
     } else {
       setToggleClass(`${classes.navLinks}`);
       setCross(false);
+      setCrossClass(`${classes.toggle}`);
     }
   };
 
@@ -27,7 +30,7 @@ const Navbar = () => {
       <div className={classes.brandImg}>
         <img src={logo} alt="Excellence Foundation" />
       </div>
-      <button className={classes.toggle} onClick={toggleHandler}>
+      <button className={crossClass} onClick={toggleHandler}>
         {!cross && <RxHamburgerMenu />}
         {cross && <RxCross2 />}
       </button>

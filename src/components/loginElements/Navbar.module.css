@@ -144,6 +144,10 @@
     clip-path: circle(141.3% at 100% 0);
     height: 100vh;
   }
+
+  .toggle.active {
+    color: white;
+  }
 }
 
 @media (max-width: 688px) {
