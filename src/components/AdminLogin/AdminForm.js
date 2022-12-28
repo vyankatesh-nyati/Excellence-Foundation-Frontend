@@ -1,17 +1,17 @@
 import React, { useContext, useRef, useState } from "react";
-import classes from "./Form.module.css";
+import classes from "./AdminForm.module.css";
 import { FaUserCircle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import AuthContext from "../../store/auth-context";
+import AdminContext from "../../store/admin-context";
 import { Link, useHistory } from "react-router-dom";
 
-const Form = () => {
+const AdminForm = () => {
   const emailRef = useRef();
   const passRef = useRef();
 
-  const adminLoginClasses = `center ${classes.navigator}`;
+  const loginClasses = `center ${classes.navigator}`;
 
-  const authCtx = useContext(AuthContext);
+  const adminCtx = useContext(AdminContext);
 
   const history = useHistory();
 
@@ -27,7 +27,7 @@ const Form = () => {
 
     try {
       const response = await fetch(
-        "https://red-hungry-python.cyclic.app/auth/login",
+        "https://red-hungry-python.cyclic.app/admin/login",
         {
           method: "POST",
           body: JSON.stringify({
@@ -52,8 +52,8 @@ const Form = () => {
 
       if (data.token) {
         const expirationTime = new Date(new Date().getTime() + 3600000);
-        authCtx.login(data.token, expirationTime.toISOString());
-        history.replace("/dashboard");
+        adminCtx.adminLogin(data.token, expirationTime.toISOString());
+        history.replace("/admin/dashboard");
       }
     } catch (error) {
       setError("Something went wrong");
@@ -65,14 +65,14 @@ const Form = () => {
     passRef.current.value = "";
   };
 
-  const adminToggleHandler = () => {
-    history.replace("/admin/login");
+  const userToggleHandler = () => {
+    history.replace("/login");
   };
 
   return (
     <form className={classes.container} onSubmit={formSubmitHandler}>
       {error && !loading && <div className={classes.danger}>{error}</div>}
-      <h1>SIGN IN</h1>
+      <h1>ADMIN</h1>
       <div className={classes.inputLabel}>
         <label>
           <FaUserCircle /> Email
@@ -87,13 +87,13 @@ const Form = () => {
       </div>
       {loading && <span className={classes.loader}></span>}
       {!loading && <button type="submit">Sign in</button>}
-      <div className={adminLoginClasses}>
-        <Link onClick={adminToggleHandler}>
-          <p>Click here for admin login</p>
+      <div className={loginClasses}>
+        <Link onClick={userToggleHandler}>
+          <p>Click here for user login</p>
         </Link>
       </div>
     </form>
   );
 };
 
-export default Form;
+export default AdminForm;
