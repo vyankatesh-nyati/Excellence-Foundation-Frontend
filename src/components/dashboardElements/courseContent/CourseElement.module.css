@@ -3,49 +3,106 @@
 .container {
   display: flex;
   background: linear-gradient(90deg, #0f9ec8 0%, #22405b 100%);
-  border-radius: 25px;
-  /* position: relative; */
+  border-radius: 1.5rem;
   width: 70%;
-  margin-top: 2rem;
-  height: 100%;
+  height: 15rem;
   cursor: pointer;
   box-shadow: 0px 5px 5px #22405b;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  color: #ffffff;
+  position: relative;
+  gap: 2rem;
 }
 
 .courseImg {
   height: 12rem;
-  transform: translate(-50%, 0);
+  margin-left: 2rem;
 }
 
 .courseImg img {
   height: 100%;
+  border: 4px solid rgb(160, 189, 212);
+  border-radius: 15px;
 }
 
 .courseContent {
-  padding: 1rem 5rem 0 0;
-  margin-left: -1.5rem;
+  /* margin-left: 20rem; */
+  padding: 1rem;
 }
 
-.courseHeading h3 {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
+.courseHeading {
   font-size: 1.2rem;
-  line-height: 30px;
-  color: #ffffff;
 }
 
-.lessons h3 {
-  font-family: "Poppins";
-  font-style: normal;
+.lessons {
   font-weight: 600;
   font-size: 1rem;
-  line-height: 30px;
-  /* identical to box height */
   margin-top: 1rem;
-  color: #ffffff;
+}
+
+.courseRating {
+  display: flex;
 }
 
 .courseRating img {
   height: 1rem;
+}
+
+@media (max-width: 843px) {
+  .container {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    gap: 0rem;
+  }
+
+  .courseImg {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  .courseContent {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .courseHeading {
+    font-size: 1rem;
+    display: flex;
+    align-self: center;
+  }
+
+  .lessons {
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+  }
+}
+
+ @media (max-width: 401px) {
+  .courseImg {
+    height: 10rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .courseImg {
+    height: 8rem;
+  }
+}
+
+@media (max-width: 271px) {
+  .container {
+    width: 75%;
+  }
+
+  .courseImg {
+    height: 6rem;
+  }
 }

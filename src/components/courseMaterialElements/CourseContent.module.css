@@ -1,0 +1,44 @@
+.sessions {
+  display: flex;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 5rem;
+  /* justify-content: center; */
+  justify-content: center;
+}
+
+.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #8f242f;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #8f242f;
+  text-align: center;
+}
+
+@media (max-width: 975px) {
+  .sessions {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 885px) {
+  .sessions {
+    gap: 4rem 2rem;
+  }
+}
+
+@media (max-width: 595px) {
+  .sessions {
+    gap: 3rem 1rem;
+  }
+}
+
+@media (max-width: 465px) {
+  .sessions {
+    gap: 2.5rem 0.5rem;
+    padding: 1rem 0;
+  }
+}

@@ -5,7 +5,7 @@ import classes from "./FormImg.module.css";
 const FormImg = () => {
   return (
     <div className={classes.container}>
-      <img src={girl} />
+      <img src={girl} alt="Excellence Foundation" />
     </div>
   );
 };

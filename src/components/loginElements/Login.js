@@ -1,6 +1,6 @@
 import React from "react";
-import Loginform from "../components/loginElements/Loginform";
-import Navbar from "../components/loginElements/Navbar";
+import Loginform from "./Loginform";
+import Navbar from "./Navbar";
 import classes from "./Login.module.css";
 
 const Login = () => {

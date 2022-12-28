@@ -1,25 +1,17 @@
 import React from "react";
-import { CourseElement } from "../components/courseMaterialElements/CourseElement";
+import { useParams } from "react-router-dom";
 import Navbar from "../components/courseMaterialElements/Navbar";
-import classes from "./CourseMaterial.module.css";
+import CourseContent from "../components/courseMaterialElements/CourseContent";
 
-const courseMaterial = () => {
+const CourseMaterial = () => {
+  const param = useParams();
+
   return (
-    <div>
+    <>
       <Navbar />
-      <div className={classes.sessions}>
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-        <CourseElement />
-      </div>
-    </div>
+      <CourseContent param={param} />
+    </>
   );
 };
 
-export default courseMaterial;
+export default CourseMaterial;

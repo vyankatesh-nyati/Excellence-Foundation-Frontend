@@ -29,3 +29,12 @@
 .avtar img {
   height: 100%;
 }
+
+@media (max-width: 420px) {
+  .container {
+    justify-content: center;
+  }
+  .avtar {
+    display: none;
+  }
+}

@@ -6,6 +6,7 @@ import { IoHome } from "react-icons/io5";
 import { FaBlogger, FaUserTie, FaImage, FaAddressBook } from "react-icons/fa";
 import { BsJournalAlbum, BsBoxArrowInLeft } from "react-icons/bs";
 import { BiRightArrow } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleClass, setToggleClass] = useState(`${classes.navLinks}`);
@@ -13,7 +14,7 @@ const Navbar = () => {
   const [crossClass, setCrossClass] = useState(`${classes.toggle}`);
 
   const toggleHandler = () => {
-    console.log("Clicked");
+    // console.log("Clicked");
     if (toggleClass === `${classes.navLinks}`) {
       setToggleClass(`${classes.navLinks}  ${classes.active}`);
       setCross(true);
@@ -88,12 +89,12 @@ const Navbar = () => {
         <div className={classes.steps}>
           <ul>
             <li>
-              <a href="#">
+              <Link to="/login">
                 <div className={classes.icon}>
                   <BsBoxArrowInLeft />
                 </div>{" "}
                 Login
-              </a>
+              </Link>
             </li>
           </ul>
           <div className={classes.register}>

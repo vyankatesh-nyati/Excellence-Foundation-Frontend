@@ -24,7 +24,7 @@ const Form = () => {
     const password = passRef.current.value;
 
     try {
-      const response = await fetch("http://localhost:8080/auth/login", {
+      const response = await fetch("https://red-hungry-python.cyclic.app/auth/login", {
         method: "POST",
         body: JSON.stringify({
           email: email,
@@ -45,10 +45,10 @@ const Form = () => {
       }
 
       if (data.token) {
-        authCtx.login(data.token);
+        const expirationTime = new Date(new Date().getTime() + 3600000);
+        authCtx.login(data.token, expirationTime.toISOString());
         history.replace("/dashboard");
       }
-
     } catch (error) {
       setError("Something went wrong");
       console.log(error);
