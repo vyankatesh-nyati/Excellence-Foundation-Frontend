@@ -4,6 +4,7 @@ import CourseElement from "./courseContent/CourseElement";
 import classes from "./DashboardContent.module.css";
 import NavContent from "./NavContent";
 import civil from "../../Assests/civil-course.jpg";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 const DashboardContent = () => {
   const [loading, setLoading] = useState(false);
@@ -78,9 +79,7 @@ const DashboardContent = () => {
   if (loading) {
     return (
       <div className={classes.container}>
-        <div className={classes.loading}>
-          <span className={classes.loader}></span>
-        </div>
+        <LoadingSpinner />
       </div>
     );
   }

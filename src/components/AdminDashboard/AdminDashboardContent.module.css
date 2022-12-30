@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+}
+
+.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #8f242f;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #8f242f;
+  text-align: center;
+}
+
+.data {
+  /* background-color: aqua; */
+  height: 87vh;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 1010px) {
+  .container {
+    flex-direction: column;
+  }
+}

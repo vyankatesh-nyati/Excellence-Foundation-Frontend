@@ -19,14 +19,14 @@ const calculateRemainingTime = (adminExpirationTime) => {
 };
 
 const retriveAdminStoredToken = () => {
-  const storedAdminToken = localStorage.getItem("adminToken");
-  const expirationTime = localStorage.getItem("adminExpirationTime");
+  const storedAdminToken = localStorage.getItem("aToken");
+  const expirationTime = localStorage.getItem("aExipirationTime");
 
   const remainingTime = calculateRemainingTime(expirationTime);
 
   if (remainingTime <= 300000) {
-    localStorage.removeItem("adminToken");
-    localStorage.removeItem("adminExpirationTime");
+    localStorage.removeItem("aToken");
+    localStorage.removeItem("aExipirationTime");
     return null;
   }
 
@@ -48,8 +48,8 @@ export const AdminContextProvider = (props) => {
 
   const adminLogoutHandler = useCallback(() => {
     setAdminToken(null);
-    localStorage.removeItem("adminToken");
-    localStorage.removeItem("adminExpirationTime");
+    localStorage.removeItem("aToken");
+    localStorage.removeItem("aExipirationTime");
 
     if (logoutTimer) {
       clearTimeout(logoutTimer);
@@ -58,8 +58,8 @@ export const AdminContextProvider = (props) => {
 
   const adminLoginHandler = (adminToken, adminExpirationTime) => {
     setAdminToken(adminToken);
-    localStorage.setItem("adminToken", adminToken);
-    localStorage.setItem("adminExipirationTime", adminExpirationTime);
+    localStorage.setItem("aToken", adminToken);
+    localStorage.setItem("aExipirationTime", adminExpirationTime);
 
     const remainingTime = calculateRemainingTime(adminExpirationTime);
 

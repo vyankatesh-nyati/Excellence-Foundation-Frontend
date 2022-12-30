@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  width: 80%;
+  /* height: 100%; */
+  /* justify-content: center; */
+  overflow: auto;
+  /* overflow-x: auto; */
+}
+
+.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #8f242f;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #8f242f;
+  text-align: center;
+}
+
+.container table {
+  width: 100%;
+}
+
+.container table,
+.container th,
+.container td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.container th,
+.container td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.container ul li {
+  list-style: none;
+}
+
+.actions {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+}
+
+.actions button {
+  border: none;
+  background-color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.delete {
+  color: red;
+}
+
+.edit {
+  color: green;
+}
+
+.active {
+  background-color: #f8d7da;
+}

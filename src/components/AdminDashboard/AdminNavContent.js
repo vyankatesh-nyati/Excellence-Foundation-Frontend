@@ -1,19 +1,19 @@
 import React, { useContext, useState } from "react";
-import classes from "./NavContent.module.css";
+import classes from "./AdminNavContent.module.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import AuthContext from "../../store/auth-context";
+import AdminContext from "../../store/admin-context";
 
-const NavContent = () => {
-  const authCtx = useContext(AuthContext);
+const AdminNavContent = () => {
+  const adminCtx = useContext(AdminContext);
 
   const [toggleClass, setToggleClass] = useState(`${classes.subContainer}`);
   const [cross, setCross] = useState(false);
 
   const logoutHandler = () => {
-    authCtx.logout();
+    adminCtx.adminLogout();
   };
 
   const toggleHandler = () => {
@@ -25,7 +25,6 @@ const NavContent = () => {
       setCross(false);
     }
   };
-
   return (
     <div className={classes.container}>
       <div className={classes.toggle} onClick={toggleHandler}>
@@ -37,9 +36,14 @@ const NavContent = () => {
           <div className={classes.heading}>Menu</div>
         </div>
         <div className={classes.navigators}>
-          <Link to="/dashboard" onClick={toggleHandler}>
+          <Link to="/admin/dashboard" onClick={toggleHandler}>
             <div className={classes.navItem}>
               <MdSpaceDashboard /> Dashboard
+            </div>
+          </Link>
+          <Link to="/admin/student/signup">
+            <div className={classes.navItem}>
+              <MdSpaceDashboard /> Student Signup
             </div>
           </Link>
           <div className={classes.navItem} onClick={logoutHandler}>
@@ -51,4 +55,4 @@ const NavContent = () => {
   );
 };
 
-export default NavContent;
+export default AdminNavContent;

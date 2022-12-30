@@ -5,6 +5,8 @@ import AuthContext from "./store/auth-context";
 import LoadingSpinner from "./components/ui/LoadingSpinner";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminContext from "./store/admin-context";
+import AdminDashboard from "./pages/AdminDashboard";
+import StudentSignup from "./pages/StudentSignup";
 
 const CourseMaterial = React.lazy(() => import("./pages/CourseMaterial"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
@@ -49,7 +51,11 @@ const App = () => {
             {adminCtx.isAdminLoggedIn && <Redirect to="/admin/dashboard" />}
           </Route>
           <Route path="/admin/dashboard">
-            {adminCtx.isAdminLoggedIn && <h1>Hello admin</h1>}
+            {adminCtx.isAdminLoggedIn && <AdminDashboard />}
+            {!adminCtx.isAdminLoggedIn && <Redirect to="/admin/login" />}
+          </Route>
+          <Route path="/admin/student/signup">
+            {adminCtx.isAdminLoggedIn && <StudentSignup />}
             {!adminCtx.isAdminLoggedIn && <Redirect to="/admin/login" />}
           </Route>
           <Route path="*">
