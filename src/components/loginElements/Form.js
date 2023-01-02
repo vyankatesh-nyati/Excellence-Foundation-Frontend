@@ -57,7 +57,6 @@ const Form = () => {
       }
     } catch (error) {
       setError("Something went wrong");
-      console.log(error);
     }
     setLoading(false);
 

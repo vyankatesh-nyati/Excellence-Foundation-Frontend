@@ -1,12 +1,8 @@
 import React from "react";
-import DashboardNavbar from "../components/dashboardElements/DashboardNavbar";
+import Subcontainer from "../components/StudentSignup/Subcontainer";
 
 const StudentSignup = () => {
-  return (
-    <>
-      <DashboardNavbar />
-    </>
-  );
+  return <Subcontainer signup={true} />;
 };
 
 export default StudentSignup;

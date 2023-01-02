@@ -1,45 +1,59 @@
-import React, { useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import classes from "./TableForm.module.css";
-import { MdArrowDropDown } from "react-icons/md";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
-import { useState } from "react";
 import Select from "react-select";
-import TableData from "./TableData";
+import { useHistory } from "react-router-dom";
 
-const TableForm = () => {
+const TableForm = (props) => {
   const monthRef = useRef();
   const yearRef = useRef();
   const searchRef = useRef();
+  const history = useHistory();
 
   const monthOptions = [
-    { value: "0", label: "Month" },
-    { value: "1", label: "January" },
-    { value: "2", label: "February" },
-    { value: "3", label: "March" },
-    { value: "4", label: "April" },
-    { value: "5", label: "May" },
-    { value: "6", label: "June" },
-    { value: "7", label: "Jully" },
-    { value: "8", label: "August" },
-    { value: "9", label: "September" },
-    { value: "10", label: "October" },
-    { value: "11", label: "November" },
-    { value: "12", label: "December" },
+    { value: "all", label: "all" },
+    { value: "Jan", label: "January" },
+    { value: "Feb", label: "February" },
+    { value: "Mar", label: "March" },
+    { value: "Apr", label: "April" },
+    { value: "May", label: "May" },
+    { value: "Jun", label: "June" },
+    { value: "Jul", label: "Jully" },
+    { value: "Aug", label: "August" },
+    { value: "Sep", label: "September" },
+    { value: "Oct", label: "October" },
+    { value: "Nov", label: "November" },
+    { value: "Dec", label: "December" },
   ];
 
   const yearOptions = [
-    { value: "all", label: "Year" },
+    { value: "all", label: "all" },
     { value: "2023", label: "2023" },
     { value: "2022", label: "2022" },
     { value: "2021", label: "2021" },
   ];
 
-  const formSubmitHandler = () => {
+  const formSubmitHandler = useCallback(() => {
     // console.log(event);
-    console.log(monthRef.current.value);
-    console.log(yearRef.current.value);
-    console.log(searchRef.current.value);
-  };
+    let month, year, search;
+    month = monthRef.current.value;
+    year = yearRef.current.value;
+    search = searchRef.current.value;
+    if (!month) {
+      month = "all";
+    }
+    if (!year) {
+      year = "all";
+    }
+    if (!search) {
+      search = "all";
+    }
+    props.queryHandler(search, month, year);
+  }, [props]);
+
+  useEffect(() => {
+    formSubmitHandler();
+  }, [formSubmitHandler]);
 
   const monthChangeHandler = (selectedOption) => {
     monthRef.current.value = selectedOption.value;
@@ -49,6 +63,10 @@ const TableForm = () => {
   const yearChangeHandler = (selectedOption) => {
     yearRef.current.value = selectedOption.value;
     formSubmitHandler();
+  };
+
+  const newStudentHandler = () => {
+    history.push("/admin/student/signup");
   };
 
   return (
@@ -61,20 +79,20 @@ const TableForm = () => {
           <Select
             className={classes.subquery}
             options={monthOptions}
-            defaultValue={monthOptions[0]}
+            placeholder="Month"
             onChange={monthChangeHandler}
             ref={monthRef}
           />
           <Select
             className={classes.subquery}
             options={yearOptions}
-            defaultValue="year"
+            placeholder="Year"
             onChange={yearChangeHandler}
             ref={yearRef}
           />
         </div>
         <div className={classes.new}>
-          <button>
+          <button onClick={newStudentHandler}>
             <BsFillJournalBookmarkFill /> New
           </button>
         </div>
