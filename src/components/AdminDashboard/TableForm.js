@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef } from "react";
 import classes from "./TableForm.module.css";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
 import Select from "react-select";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const TableForm = (props) => {
   const monthRef = useRef();
@@ -92,9 +92,9 @@ const TableForm = (props) => {
           />
         </div>
         <div className={classes.new}>
-          <button onClick={newStudentHandler}>
+          <Link onClick={newStudentHandler}>
             <BsFillJournalBookmarkFill /> New
-          </button>
+          </Link>
         </div>
       </form>
     </div>

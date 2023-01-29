@@ -12,7 +12,7 @@ const CourseElement = (props) => {
         </div>
         <div className={classes.courseContent}>
           <div className={classes.courseHeading}>{props.title}</div>
-          <div className={classes.lessons}>Total Lessons: {props.lessons}</div>
+          <div className={classes.lessons}>Total Sessions : {props.lessons}</div>
           <div className={classes.courseRating}>
             <img src={rating} alt="rating" />
             <img src={rating} alt="rating" />
