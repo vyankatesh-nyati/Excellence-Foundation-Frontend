@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 import classes from "./Certificate.module.css";
 import certificateImg from "../../Assests/certificate.png";
 import html2canvas from "html2canvas";
@@ -6,17 +6,23 @@ import jsPDF from "jspdf";
 
 const pdf = new jsPDF("l", "cm", [29.7, 21], true);
 
-export const addCertificate = (regId) => {
-  const input = document.getElementById("certificate");
+// export const addCertificate = (regId) => {
+//   const input = document.getElementById("certificate");
 
-  html2canvas(input, { scale: 6 }).then((canvas) => {
-    const imgData = canvas.toDataURL("image/png");
-    pdf.addImage(imgData, "PNG", 0, 0, 29.7, 21, "", "FAST");
-    pdf.save(`${regId}.pdf`);
-  });
-};
+//   html2canvas(input, { scale: 6 }).then((canvas) => {
+//     const imgData = canvas.toDataURL("image/png");
+//     pdf.addImage(imgData, "PNG", 0, 0, 29.7, 21, "", "FAST");
+//     pdf.save(`${regId}.pdf`, { returnPromise: true });
+//   });
+// };
 
-const Certificate = (props) => {
+const Certificate = forwardRef((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    printCertificate() {
+      printCertificate();
+    },
+  }));
+
   const data = props.formData;
   // console.log(data);
   let dd = new Date().getDate();
@@ -63,6 +69,6 @@ const Certificate = (props) => {
       </button>
     </div>
   );
-};
+});
 
 export default Certificate;

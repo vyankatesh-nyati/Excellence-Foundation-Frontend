@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import classes from "./Form.module.css";
-import { addCertificate } from "./Certificate";
+// import { addCertificate } from "./Certificate";
 
 const Form = (props) => {
   const nameRef = useRef();
@@ -20,8 +20,15 @@ const Form = (props) => {
   const certificateGeneratorHandler = () => {
     const regId = regRef.current.value;
 
-    addCertificate(regId);
-    
+    // addCertificate(regId);
+
+    props.certificateHandler();
+
+    props.formSubmitData({
+      name: "",
+      regId: "",
+    });
+
     nameRef.current.value = "";
     regRef.current.value = "";
   };
