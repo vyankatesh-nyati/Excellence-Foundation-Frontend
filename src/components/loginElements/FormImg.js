@@ -1,5 +1,5 @@
 import React from "react";
-import girl from "../../Assests/girl.png";
+import girl from "../../Assests/girl.webp";
 import classes from "./FormImg.module.css";
 
 const FormImg = () => {

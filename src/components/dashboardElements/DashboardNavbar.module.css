@@ -15,19 +15,23 @@
 .logo {
   height: 5rem;
   cursor: pointer;
+  width: auto;
 }
 
 .logo img {
   height: 100%;
+  width: auto;
 }
 
 .avtar {
   height: 3.5rem;
   cursor: pointer;
+  width: auto;
 }
 
 .avtar img {
   height: 100%;
+  width: auto;
 }
 
 @media (max-width: 420px) {

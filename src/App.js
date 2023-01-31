@@ -13,6 +13,7 @@ const AdminLoginPage = React.lazy(() => import("./pages/AdminLoginPage"));
 const AdminDashboard = React.lazy(() => import("./pages/AdminDashboard"));
 const StudentSignup = React.lazy(() => import("./pages/StudentSignup"));
 const StudentUpdate = React.lazy(() => import("./pages/StudentUpdate"));
+const AdminCertificate = React.lazy(() => import("./pages/AdminCertificate"));
 
 const App = () => {
   const authCtx = useContext(AuthContext);
@@ -60,6 +61,10 @@ const App = () => {
         </Route>
         <Route path="/admin/student/:userId" exact>
           {adminCtx.isAdminLoggedIn && <StudentUpdate />}
+          {!adminCtx.isAdminLoggedIn && <Redirect to="/admin/login" />}
+        </Route>
+        <Route path="/admin/certificate" exact>
+          {adminCtx.isAdminLoggedIn && <AdminCertificate />}
           {!adminCtx.isAdminLoggedIn && <Redirect to="/admin/login" />}
         </Route>
         <Route path="*">

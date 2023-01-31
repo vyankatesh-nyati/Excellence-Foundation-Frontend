@@ -3,7 +3,7 @@ import AuthContext from "../../store/auth-context";
 import CourseElement from "./courseContent/CourseElement";
 import classes from "./DashboardContent.module.css";
 import NavContent from "./NavContent";
-import civil from "../../Assests/civil-course.jpg";
+import civil from "../../Assests/civil-course.webp";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
 const DashboardContent = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./DashboardNavbar.module.css";
-import logo from "../../Assests/logo.png";
-import avtar from "../../Assests/avtar.png";
+import logo from "../../Assests/logo.webp";
+import avtar from "../../Assests/avtar.webp";
 
 const DashboardNavbar = () => {
   return (

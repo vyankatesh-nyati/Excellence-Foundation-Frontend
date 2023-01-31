@@ -1,0 +1,60 @@
+.container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.container form {
+  padding: 2rem 0.5rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid rgb(58, 58, 58); */
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.container form h1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.3rem;
+  padding-bottom: 1.2rem;
+  color: #22405b;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  /* padding: 0.5rem; */
+  gap: 0.3rem;
+  padding: 0.5rem 0;
+}
+
+.inputLabel input {
+  padding: 0.3rem;
+  /* border-radius: 3px; */
+  font-size: 1rem;
+}
+
+.inputLabel input:focus {
+  outline: none;
+}
+
+.container form button {
+  padding: 0.5rem 1rem;
+  width: 80%;
+  margin-top: 1rem;
+  background: #22405b;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  font-family: "Poppins";
+  font-size: 1.1rem;
+  cursor: pointer;
+}

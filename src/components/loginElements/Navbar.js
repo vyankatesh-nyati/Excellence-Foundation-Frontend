@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Navbar.module.css";
-import logo from "../../Assests/logo1.png";
+import logo from "../../Assests/logo1.webp";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { IoHome } from "react-icons/io5";
 import { FaBlogger, FaUserTie, FaImage, FaAddressBook } from "react-icons/fa";

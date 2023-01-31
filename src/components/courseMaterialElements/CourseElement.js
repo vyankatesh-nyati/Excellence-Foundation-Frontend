@@ -3,7 +3,7 @@ import classes from "./CourseElement.module.css";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export const CourseElement = (props) => {
+const CourseElement = (props) => {
   const [icon, setIcon] = useState(1);
   const notesUrl = `https://red-hungry-python.cyclic.app${props.notes}`;
   const videoUrl = `/course-material/${props.course}/${props.id}`;
@@ -48,7 +48,7 @@ export const CourseElement = (props) => {
             <div className={classes.sessionDetail}>{props.title} Video</div>
           </Link>
           {props.notes !== "none" && (
-            <a href={notesUrl} target="_blank">
+            <a href={notesUrl} target="_blank" rel="noreferrer">
               <div className={classes.sessionDetail}>Notes</div>
             </a>
           )}
