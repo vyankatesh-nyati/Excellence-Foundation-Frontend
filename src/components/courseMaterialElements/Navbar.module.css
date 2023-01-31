@@ -59,6 +59,7 @@
 
 .logo img {
   height: 100%;
+  width: auto;
 }
 
 @media (max-width: 573px) {

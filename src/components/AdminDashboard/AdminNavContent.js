@@ -3,6 +3,8 @@ import classes from "./AdminNavContent.module.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { MdSpaceDashboard } from "react-icons/md";
 import { RiLogoutCircleRLine } from "react-icons/ri";
+import { GoTriangleRight } from "react-icons/go";
+import { TbFileCertificate } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import AdminContext from "../../store/admin-context";
 
@@ -43,7 +45,12 @@ const AdminNavContent = () => {
           </Link>
           <Link to="/admin/student/signup">
             <div className={classes.navItem}>
-              <MdSpaceDashboard /> Student Signup
+              <GoTriangleRight /> Student Signup
+            </div>
+          </Link>
+          <Link to="/admin/certificate">
+            <div className={classes.navItem}>
+              <TbFileCertificate /> Certificate
             </div>
           </Link>
           <div className={classes.navItem} onClick={logoutHandler}>

@@ -17,21 +17,6 @@ const TableData = (props) => {
   const queryYear = props.year;
   // console.log(querySearch, queryMonth, queryYear);
 
-  const month = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -74,7 +59,7 @@ const TableData = (props) => {
   const dataFetchHandler = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8080/data/student", {
+      const response = await fetch("https://red-hungry-python.cyclic.app/data/student", {
         method: "GET",
         headers: {
           Authorization: `bearer ${adminCtx.adminToken}`,

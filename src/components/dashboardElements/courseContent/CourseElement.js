@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./CourseElement.module.css";
-import rating from "../../../Assests/star.png";
+import rating from "../../../Assests/star.webp";
 import { Link } from "react-router-dom";
 
 const CourseElement = (props) => {

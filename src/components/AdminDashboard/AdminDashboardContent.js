@@ -17,9 +17,7 @@ const AdminDashboardContent = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.navContent}>
-        <AdminNavContent />
-      </div>
+      <AdminNavContent />
       <div className={classes.data}>
         <TableForm queryHandler={queryHandler} />
         <TableData year={year} month={month} search={search} />

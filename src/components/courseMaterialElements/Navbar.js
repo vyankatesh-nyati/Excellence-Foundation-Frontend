@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Navbar.module.css";
-import logo from "../../Assests/logo.png";
+import logo from "../../Assests/logo.webp";
 import { MdSpaceDashboard } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";

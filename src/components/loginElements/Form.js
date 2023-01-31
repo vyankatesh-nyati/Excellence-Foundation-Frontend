@@ -64,30 +64,26 @@ const Form = () => {
     passRef.current.value = "";
   };
 
-  const adminToggleHandler = () => {
-    history.replace("/admin/login");
-  };
-
   return (
     <form className={classes.container} onSubmit={formSubmitHandler}>
       {error && !loading && <div className={classes.danger}>{error}</div>}
       <h1>SIGN IN</h1>
       <div className={classes.inputLabel}>
-        <label>
+        <label for="email">
           <FaUserCircle /> Email
         </label>
-        <input type="email" ref={emailRef} required />
+        <input type="email" ref={emailRef} id="email" required />
       </div>
       <div className={classes.inputLabel}>
-        <label>
+        <label for="password">
           <RiLockPasswordFill /> Password
         </label>
-        <input type="password" ref={passRef} required />
+        <input type="password" ref={passRef} id="password" required />
       </div>
       {loading && <span className={classes.loader}></span>}
       {!loading && <button type="submit">Sign in</button>}
       <div className={adminLoginClasses}>
-        <Link onClick={adminToggleHandler}>
+        <Link to="/admin/login">
           <p>Click here for admin login</p>
         </Link>
       </div>
